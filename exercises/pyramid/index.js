@@ -14,6 +14,96 @@
 //       ' ### '
 //       '#####'
 
-function pyramid(n) {}
+
+// KEY INFORMATION
+  // number = ?
+  // row = 1
+  // current string = ""
+
+// Determine factors for ending current recursion
+  // if (row - 1) is equal to number
+    // stop all
+  // if string.length = (number + (number - 1))
+    // console.log
+    // call function with number and row + 1
+
+// Add to string logic
+  // if string.length > number - row and string.length < (number + (number - 1)) - row
+    // add "#"
+  // else 
+    // add " "
+
+// call function with all key information
+
+
+
+// function pyramid(n, row = 1, result = "") {
+//   if(row - 1 === n) {
+//     return;
+//   }
+  
+//   if(result.length === (n + (n - 1))) {
+//     console.log(result);
+//     pyramid(n, row + 1);
+//     return;
+//   }
+
+//   let midPoint = Math.floor((2 * n - 1) / 2);
+  
+ 
+//   if(result.length < (midPoint + row) && result.length > (midPoint - row)) {
+//     result += "#";
+//   } 
+//   else {
+//     result += " ";
+//   }
+
+//   pyramid(n, row, result);
+// }
+
+
+// function pyramid(n) {
+//   const midPoint = Math.floor((2 * n - 1) / 2);
+
+//   for (let row = 0; row < n; row++) {
+//     let result = "";
+
+//     for (let column = 0; column < 2 * n - 1; column++) {
+//       if (midPoint - row <= column && midPoint + row >= column) {
+//         result += "#";
+//       } else {
+//         result += " ";
+//       }
+      
+//     }
+    
+//     console.log(result);
+//   }
+// }
+
+
+function pyramid(n, row = 0, result = "") {
+  if(row === n) {
+    return;
+  }
+
+  if(result.length === (2 * n - 1)) {
+    console.log(result);
+    pyramid(n, row + 1);
+    return;
+  }
+
+  const midPoint = Math.floor((2 * n - 1) / 2);
+  let add;
+
+  if(result.length >= midPoint - row && result.length <= midPoint + row) {
+    add = "#";
+  } else {
+    add = " ";
+  }
+
+  pyramid(n, row, result + add);
+}
+
 
 module.exports = pyramid;
