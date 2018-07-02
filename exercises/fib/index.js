@@ -8,6 +8,7 @@
 // Example:
 //   fib(4) === 3
 
+
 // function fib(n) {
 //  let result = [0, 1];
 
