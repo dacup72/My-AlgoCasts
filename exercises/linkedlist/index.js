@@ -87,13 +87,7 @@ class LinkedList {
       return;
     }
 
-    let node = this.head;
-
-    while(node.next) {
-      node = this.head.next;
-    }
-
-    node.next = new Node(data);
+    this.getLast().next = new Node(data);
   }
 }
 
