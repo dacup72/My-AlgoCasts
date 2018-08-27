@@ -91,18 +91,17 @@ class LinkedList {
   }
 
   getAt(num) {
-    if(num >= this.size()) {
-      return null;
-    }
     let i = 0;
     let node = this.head;
 
-    while(i < num) {
+    while(node) {
+      if(i === num) {
+        return node;
+      }
       node = node.next;
       i++;
     }
-
-    return node;
+    return null;
   }
 }
 
