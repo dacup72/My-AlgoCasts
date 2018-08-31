@@ -31,7 +31,8 @@ class LinkedList {
   }
 
   getFirst() {
-    return this.head;
+    // return this.head;
+    return this.getAt(0);
   }
 
   getLast() {
@@ -130,9 +131,10 @@ class LinkedList {
 
     if(index === 0) {
       this.head = new Node(data, this.head);
+      return;
     }
 
-    const previous = this.getAt(index - 1) || this.getLast;
+    const previous = this.getAt(index - 1) || this.getLast();
     const node = new Node(data, previous.next);
     previous.next = node;
 
