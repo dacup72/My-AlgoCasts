@@ -36,18 +36,19 @@ class LinkedList {
   }
 
   getLast() {
-    if (!this.head) {
-      return null;
-    }
+    // if (!this.head) {
+    //   return null;
+    // }
 
-    let node = this.head;
-    while (node) {
-      if (!node.next) {
-        return node;
-      }
-      node = node.next;
+    // let node = this.head;
+    // while (node) {
+    //   if (!node.next) {
+    //     return node;
+    //   }
+    //   node = node.next;
 
-    }
+    // }
+    return this.getAt(this.size() -1);
   }
 
   clear() {
