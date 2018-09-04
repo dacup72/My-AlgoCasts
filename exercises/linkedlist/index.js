@@ -85,12 +85,13 @@ class LinkedList {
   }
 
   insertLast(data) {
-    if(!this.head) {
-      this.head = new Node(data);
-      return;
-    }
+    // if(!this.head) {
+    //   this.head = new Node(data);
+    //   return;
+    // }
 
-    this.getLast().next = new Node(data);
+    // this.getLast().next = new Node(data);
+    this.insertAt(data, this.size());
   }
 
   getAt(num) {
