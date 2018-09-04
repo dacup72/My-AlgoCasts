@@ -57,11 +57,12 @@ class LinkedList {
   }
 
   removeFirst() {
-    if (!this.head) {
-      return null;
-    }
+    // if (!this.head) {
+    //   return null;
+    // }
 
-    this.head = this.head.next;
+    // this.head = this.head.next;
+    this.removeAt(0);
   }
 
   removeLast() {
@@ -114,7 +115,7 @@ class LinkedList {
     }
 
     if(num === 0) {
-      this.removeFirst();
+      this.head = this.head.next;
       return;
     }
 
