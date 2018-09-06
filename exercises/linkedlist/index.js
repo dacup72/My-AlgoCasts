@@ -66,23 +66,25 @@ class LinkedList {
   }
 
   removeLast() {
-    if (!this.head) {
-      return null;
-    }
-    if (!this.head.next) {
-      this.head = null;
-      return;
-    }
+    // if (!this.head) {
+    //   return null;
+    // }
+    // if (!this.head.next) {
+    //   this.head = null;
+    //   return;
+    // }
 
-    let node = this.head;
-    let prevNode = null;
+    // let node = this.head;
+    // let prevNode = null;
 
-    while (node.next) {
-      prevNode = node;
-      node = node.next
-    }
+    // while (node.next) {
+    //   prevNode = node;
+    //   node = node.next
+    // }
 
-    prevNode.next = null;
+    // prevNode.next = null;
+
+    this.removeAt(this.size() -1);
   }
 
   insertLast(data) {
