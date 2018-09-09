@@ -13,15 +13,13 @@
 //   circular(l) // true
 
 function circular(list) {
-  var listData = {};
-  var node = list.getFirst();
+  var slow = fast = list.getFirst();
 
-  while(node.next) {
-    if(listData[node.next.data]) {
-      return true;
-    }
-    node = node.next;
-    listData[node.data] = node.data;
+  while(fast.next && fast.next.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+
+    if (fast.next === slow) return true;
   }
 
   return false;
