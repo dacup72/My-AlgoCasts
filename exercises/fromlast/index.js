@@ -12,23 +12,18 @@
 //    fromLast(list, 2).data // 'b'
 
 function fromLast(list, n) {
-  var node = result = list.getFirst();
-  var count = 0
+  var slow = fast = list.getFirst();
 
-  while(node.next) {
-    if(count >= n) {
-      result = result.next;
-    }
-    count++;
-    node = node.next
+  for (let i = 0; i < n; i++) {
+    fast = fast.next;
   }
 
-  if(count >= n) {
-    return result;
+  while(fast.next) {
+    slow = slow.next;
+    fast = fast.next
   }
   
-  return null;
-
+  return slow;
 }
 
 module.exports = fromLast;
